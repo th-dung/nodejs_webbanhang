@@ -1,0 +1,48 @@
+
+<!--Shopping-->
+<section id="our-shop" class="padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center wow fadeIn" data-wow-delay="400ms">
+                <h2 class="heading bottom30 darkcolor font-light2"><span class="font-normal">Gợi ý cho bạn</span>
+                    <span class="divider-center"></span>
+                </h2>
+                <div class="col-md-8 offset-md-2 heading_space">
+                    <p>Hãy tham khảo các sản phẩm mà bạn quan tâm và nếu có thắc mắc về sản phẩm
+                        liên hệ với chúng tôi để được tư vấn và nhận giá tốt</p>
+                </div>
+            </div>
+            {{#each products}}
+            <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="300ms">
+                <div class="shopping-box bottom30">
+                    <div class="image">
+                        <img src="{{this.image_avt}}" alt="product image">
+                        <div class="overlay center-block">
+                            <a class="opens" href="/product/{{this.slug}}" title="Detail"><i
+                                    class="fa-solid fa-circle-info fa-beat"></i></a>
+                        </div>
+                    </div>
+                    <div class="shop-content text-center">
+                        <a class="darkcolor" href="/product/{{this.slug}}">{{this.name}}</a>
+                        <h3 class="darkcolor">{{this.price}}</h3>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+                <h3>Danh sách sản phẩm trống!</h3>
+            {{/each}}
+
+            <div class="col-lg-12 col-md-12">
+                <ul class="pagination justify-content-center top20 wow fadeInUp" data-wow-delay="400ms">
+                    <li class="page-item"><a class="page-link disabled" href="#."><i class="fa fa-angle-left"></i></a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#.">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#.">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#.">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#."><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Shopping ends-->

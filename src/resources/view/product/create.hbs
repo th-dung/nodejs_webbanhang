@@ -1,0 +1,168 @@
+{{!-- Page Header --}}
+<section id="main-banner-page" class="page-header">
+      <div class="container">
+            <div class="gradient-bg title-wrap">
+                  <div class="row">
+                        <div class="col-lg-12 col-md-12 whitecolor">
+                              <h3 class="float-left">Thêm sản phẩm mới</h3>
+                              <ul class="breadcrumb top10 bottom10 float-right">
+                                    <li class="breadcrumb-item hover-light">
+                                          <a data-toggle="modal" data-target="#delete-product-model">Manager</a>
+                                    </li>
+                                    <li class="breadcrumb-item hover-light">Create</li>
+                              </ul>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</section>
+{{!-- Page Header ends --}}
+{{!-- Main sign-up section starts --}}
+<section id="ourfaq" class="bglight position-relative padding">
+      <div class="container">
+            <div class="row wow fadeInUp" data-wow-delay="500ms">
+                  <div class="col-lg-12 col-md-12 whitebox">
+                        <div class="widget logincontainer home-body-background">
+                              <h3 class="darkcolor bottom35 text-center heading">
+                                    Sản phẩm mới
+                                    <span class="divider-center"></span>
+                              </h3>
+
+                              <form method="POST" action="/product/store">
+                                    <div class="row">
+                                          <div class="col-md-12 col-sm-12">
+                                                <div class="form-group bottom35">
+                                                      <label for="name_pro">Tên sản phẩm</label>
+                                                      <input type="text" name="name" id="name_pro" class="form-control"
+                                                            maxlength="150" placeholder="Tên sản phẩm:" required>
+                                                </div>
+                                          </div>
+                                          <div class="col-md-12 col-sm-12">
+                                                <div class="form-group bottom35">
+                                                      <label for="image_avt_pro">Hình đại diện</label>
+                                                      <input name="image_avt" id="image_avt_pro" class="form-control"
+                                                            type="url" maxlength="150" placeholder="url:" required />
+                                                </div>
+                                          </div>
+                                          <div class="col-md-12 col-sm-12">
+                                                <div class="form-group bottom35">
+                                                      <label for="image_1_pro">Hình mô tả 1</label>
+                                                      <input name="image_1" id="image_1_pro" class="form-control"
+                                                            type="url" maxlength="150" placeholder="Url:" />
+                                                </div>
+                                          </div>
+                                          <div class="col-md-12 col-sm-12">
+                                                <div class="form-group bottom35">
+                                                      <label for="image_2_pro">Hình mô tả 2</label>
+                                                      <input name="image_2" id="image_2_pro" class="form-control"
+                                                            type="url" maxlength="150" placeholder="Url:" />
+                                                </div>
+                                          </div>
+                                          <div class="col-md-12 col-sm-12">
+                                                <div class="form-group">
+                                                      <label for="describe_pro">Mô tả sản phẩm</label>
+                                                      <textarea name="describe" id="describe_pro" class="form-control"
+                                                            maxlength="1500" placeholder="Mô tả:" required></textarea>
+                                                </div>
+                                          </div>
+                                          <div class="col-md-12 col-sm-12">
+                                                <div class="row">
+                                                      <div class="col-md-3 col-sm-3">
+                                                            <div class="form-group bottom35">
+                                                                  <label for="currency-field">Giá bán</label>
+                                                                  <input type="text" name="price" id="currency-field"
+                                                                        class="form-control"
+                                                                        pattern="^\₫\d{1,3}(,\d{3})*(\.\d+)?₫"
+                                                                        data-type="fmcurrency" placeholder="Giá:"
+                                                                        required />
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-md-3 col-sm-3">
+                                                            <div class="form-group bottom35">
+                                                                  <label for="quantity_pro">Tồn kho</label>
+                                                                  <input type="text" name="quantity" id="quantity_pro"
+                                                                        class="form-control"
+                                                                        oninput="limitTo3Digits(this)"
+                                                                        onkeypress="return isNumberKey(event)"
+                                                                        placeholder="Số lượng:" required />
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-md-3 col-sm-3">
+                                                            <div class="form-group bottom35">
+                                                                  <label for="phone_pro">Số điện thoại</label>
+                                                                  <input type="tel" name="phone" id="phone_pro"
+                                                                        class="form-control" name="phone"
+                                                                        pattern="03|05|07|08|09|01[2|6|8|9])+([0-9]{8}"
+                                                                        placeholder="Số điện thoại: " required />
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-md-3 col-sm-3">
+                                                            <div class="form-group bottom35">
+                                                                  <label for="category_pro">Danh mục</label>
+                                                                  <select class="select form-control" id="category_pro" name="category" required>
+                                                                        <option value="">-- Chọn danh mục --</option>
+                                                                        <option>mouse</option>
+                                                                        <option>headphone</option>
+                                                                        <option>tivibox</option>
+                                                                        <option>watch</option>
+                                                                  </select>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class="col-md-12 col-sm-12">
+                                                <div class="form-group bottom35">
+                                                      <label for="shopee_pro">Url Shopee</label>
+                                                      <input name="shopee" id="shopee_pro" class="form-control"
+                                                            type="url" maxlength="150" placeholder="Url Shopee:" />
+                                                </div>
+                                          </div>
+                                          <div class="col-md-12 col-sm-12">
+                                                <div class="form-group bottom35">
+                                                      <label for="lazada_pro">Url Lazada</label>
+                                                      <input name="lazada" id="lazada_pro" class="form-control"
+                                                            type="url" maxlength="150" placeholder="Url Lazada:" />
+                                                </div>
+                                          </div>
+                                          <div class="col-md-12 col-sm-12 text-center">
+                                                <div class="error wow bounceIn" data-wow-delay="900ms">
+                                                      <a href="" class="button btn-dark wow fadeIn"
+                                                            data-wow-delay="600ms" data-toggle="modal"
+                                                            data-target="#delete-product-model">Hủy sản phẩm</a>
+                                                      <button type="submit"
+                                                            class="button btn-primary wow fadeIn mb-3 mb-sm-0"
+                                                            data-wow-delay="600ms">Thêm sản phẩm</button>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </form>
+
+                        </div>
+                  </div>
+            </div>
+      </div>
+</section>
+{{!-- Main create product section ends --}}
+
+{{!-- Modal delete product --}}
+<div class="modal fade" id="delete-product-model" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                  <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalLongTitle">Xác nhận hủy!</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                        </button>
+                  </div>
+                  <div class="modal-body">
+                        <strong>Bạn chắc chắn muốn hủy sản phẩm này!</strong>
+                  </div>
+                  <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">không</button>
+                        <a href="/me/manage/stored" class="btn btn-primary">Hủy bỏ</a>
+                  </div>
+            </div>
+      </div>
+</div>
+{{!-- End modal delete product --}}
